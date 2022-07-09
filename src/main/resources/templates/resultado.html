@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<title>Formulario</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+	<h1 th:text="${titulo}"></h1>
+	
+	<li th:text="${usuario1.username}"></li>
+	<li th:text="${usuario1.email}"></li>
+	<li th:text="${usuario1.password}"></li>
+
+</body>
+
+</html>
