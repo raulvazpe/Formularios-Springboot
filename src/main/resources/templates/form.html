@@ -10,16 +10,30 @@
 <body>
 	<h1 th:text ="${titulo}"></h1>
 	
-	<form th:action="@{/form}" method="post">
+	<form th:action="@{/form}" th:object="${usuario}" method="post">
+	
+			<label for="username">Nombre:</label><br>
+		<input type="text" id="nombre"  th:field = "*{nombre}" ><br>
+		<div th:if="${#fields.hasErrors}" th:errors="*{apellidos}"></div>
+	
+	
+			<label for="username">Apellidos:</label><br>
+		<input type="text" id="apellidos"  th:field = "*{apellidos}" ><br>
+		<div th:if="${#fields.hasErrors}" th:errors="*{apellidos}"></div>
+	
 	
 		<label for="username">Username:</label><br>
-		<input type="text" id="username" name="username" ><br>
+		<input type="text" id="username"  th:field = "*{username}" ><br>
+		<div th:if="${#fields.hasErrors}" th:errors="*{username}"></div>
 
 		<label for="password">Password:</label><br>
 		<input type="password" id="password" name="password"><br><br>
+		<div th:if="${#fields.hasErrors}" th:errors="*{password}"></div>
 
 		<label for="email">Email:</label><br>
-		<input type="text" id="email" name="email"><br><br>
+		<input type="text" id="email"  th:field= "*{email}"><br><br>
+		<div th:if="${#fields.hasErrors}" th:errors="*{email}"></div>
+		
 
 		<input type="submit" value="Enviar">
 	</form>
